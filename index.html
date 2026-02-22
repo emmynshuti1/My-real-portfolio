@@ -505,6 +505,14 @@
       justify-content: center;
       color: white;
       font-size: 3rem;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Cover the area, cropping if needed */
+      display: block;
     }
     
     .project-info {
@@ -977,12 +985,14 @@
             </div>
           </div>
           <div class="project-card">
-            <div class="project-img"><i class="fas fa-laptop-code"></i></div>
+            <div class="project-img">
+              <img src="https://i.ibb.co/b5QMfs6w/Portfolio-screenshot.png" alt="APEX Website Screenshot" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
             <div class="project-info">
-              <h3>Portfolio Website</h3>
-              <p>This responsive portfolio website built with HTML, CSS, and JavaScript. Features dark/light mode, smooth animations, and mobile-friendly design. Showcases my skills and projects effectively.</p>
+              <h3>APEX Website</h3>
+              <p>This responsive website built with HTML, CSS, and JavaScript. Features dark/light mode, smooth animations, and mobile-friendly design. Showcases my skills and projects effectively.</p>
               <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive</span></div>
-              <a href="#home" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
+              <a href="https://nshutiemmanuel860-coder.github.io/My-third-repositorie/" target="_blank" class="project-link">View Live <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="project-card">
