@@ -145,8 +145,8 @@ ul {
 
 .theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 13px;
+    right: 50px;
     width: 50px;
     height: 50px;
     background-color: var(--card-bg);
@@ -225,6 +225,58 @@ header {
     flex: 1;
     display: flex;
     justify-content: center;
+}
+
+/* Hamburger Menu Styles */
+@media (max-width: 768px) {
+  .nav-center {
+    position: static; /* Reset any positioning if needed */
+    width: auto;
+}
+  .nav-links {
+    display: none !important; /* Hidden by default on mobile */
+    position: absolute;
+    top: 70px; /* Adjust based on your header height */
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    margin: 0;
+  }
+
+  .nav-links.show {
+    display: flex !important; /* Shown when toggled */
+  }
+
+  .nav-links li {
+    margin: 12px 0; 
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .hamburger {
+    display: block !important; /* Ensure hamburger is visible */
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+  }
+}
+
+/* For larger screens, hide hamburger and show normal nav */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important; /* Ensure always visible on desktop */
+  }
 }
 
 .nav-links {
@@ -443,68 +495,6 @@ footer {
     
     .nav-right {
         width: 70px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0 20px;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .nav-center {
-        display: none;
-    }
-    
-    .nav-right {
-        display: none;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--card-bg);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        gap: 0;
-        box-shadow: var(--shadow);
-        transform: translateY(-150%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-    }
-    
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
-    }
-    
-    .nav-links a:after {
-        display: none;
-    }
-    
-    .theme-toggle {
-        top: 15px;
-        right: 70px;
-    }
-    
-    .back-to-top {
-        right: 20px;
-        bottom: 20px;
     }
 }
 

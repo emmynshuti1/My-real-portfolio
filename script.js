@@ -23,17 +23,54 @@ themeToggle.addEventListener('click', () => {
     }, 300);
 });
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.innerHTML = navLinks.classList.contains('active')
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
-});
+// ====== HAMBURGER MENU ======
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const icon = hamburger.querySelector('i');
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navLinks.classList.toggle('show');
+
+        // Toggle icon between bars and times
+        if (navLinks.classList.contains('show')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 });
 
@@ -75,23 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentYear = document.getElementById('currentYear');
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
-    }
-});
-
-document.addEventListener('click', (event) => {
-    const isClickInsideNav = navLinks.contains(event.target);
-    const isClickOnHamburger = hamburger.contains(event.target);
-
-    if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-    }
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
     }
 });
 
