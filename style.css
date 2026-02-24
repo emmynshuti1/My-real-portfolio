@@ -39,6 +39,10 @@
     --footer-link-hover: #ffffff;
 }
 
+.icon{
+    border-radius: 50%;
+}
+
 html {
     font-size: var(--font-size-base);
     scroll-behavior: smooth;
