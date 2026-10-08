@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NSHUTI monogram">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5eb0ff"/>
+      <stop offset="100%" stop-color="#35e6c5"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#060911"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="url(#g)" stroke-width="2.5" opacity="0.55"/>
+  <path d="M17 46V18h4.6l14.8 18V18H41v28h-4.6L21.6 28v18H17z" fill="url(#g)"/>
+  <circle cx="47" cy="45" r="3.4" fill="#35e6c5"/>
+</svg>

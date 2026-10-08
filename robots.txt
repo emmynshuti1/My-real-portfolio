@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://https://nshutiemmanuel860-coder.github.io/My-real-portfolio/sitemap.xml
+Sitemap: https://emmynshuti1.github.io/My-real-portfolio/sitemap.xml
