@@ -15,6 +15,7 @@ A single-page, dependency-free static site — just HTML, CSS and JavaScript, de
 | `script.js` | Theme switching, navigation, scroll effects, project filtering, contact form |
 | `favicon.svg` | Site icon |
 | `sitemap.xml`, `robots.txt`, `BingSiteAuth.xml` | Search engine configuration |
+| `404.html` | Custom GitHub Pages 404 (noindexed, links back home) |
 
 ## Features
 

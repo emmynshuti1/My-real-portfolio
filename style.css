@@ -1302,6 +1302,51 @@ textarea.input { resize: vertical; min-height: 118px; }
   transition: stroke-dashoffset 0.1s linear;
 }
 
+/* ---------- 16b. FAQ ---------- */
+.faq-list {
+  display: grid;
+  gap: 14px;
+  max-width: 880px;
+}
+.faq-item {
+  padding: 2px 26px 0;
+}
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 19px 0;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform var(--t);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:hover { color: var(--accent-2); }
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.faq-item p {
+  margin: 0 0 20px;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+.faq-item p a { color: var(--accent); }
+
 /* ---------- 17. Reveal on scroll ---------- */
 .js [data-reveal] {
   opacity: 0;
