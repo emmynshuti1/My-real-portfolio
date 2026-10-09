@@ -207,30 +207,23 @@ h1, h2, h3, h4 {
 .bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(55px);
   opacity: var(--orb-opacity);
 }
 .bg-orb--one {
   width: 46vw; height: 46vw;
   top: -14vw; left: -10vw;
   background: radial-gradient(circle, rgba(94, 176, 255, 0.55), transparent 68%);
-  animation: drift 22s var(--ease) infinite alternate;
 }
 .bg-orb--two {
   width: 38vw; height: 38vw;
   top: 24vh; right: -12vw;
   background: radial-gradient(circle, rgba(53, 230, 197, 0.4), transparent 68%);
-  animation: drift 28s var(--ease) infinite alternate-reverse;
 }
 .bg-orb--three {
   width: 40vw; height: 40vw;
   bottom: -14vw; left: 32vw;
   background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 68%);
-  animation: drift 34s var(--ease) infinite alternate;
-}
-@keyframes drift {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(4vw, 5vh, 0) scale(1.12); }
 }
 
 /* ---------- 6. Header ---------- */
@@ -1316,11 +1309,6 @@ textarea.input { resize: vertical; min-height: 118px; }
 
 @media (max-width: 768px) {
   :root { --header-h: 64px; }
-
-  .bg-orb {
-    filter: blur(55px);
-    animation: none;
-  }
 
   .nav-toggle { display: grid; }
 
