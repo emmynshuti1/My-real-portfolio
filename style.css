@@ -1317,6 +1317,11 @@ textarea.input { resize: vertical; min-height: 118px; }
 @media (max-width: 768px) {
   :root { --header-h: 64px; }
 
+  .bg-orb {
+    filter: blur(55px);
+    animation: none;
+  }
+
   .nav-toggle { display: grid; }
 
   .nav-menu {

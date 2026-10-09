@@ -34,7 +34,8 @@ form falls back to a standard post so nothing is lost.
 
 ## Notes
 
-- The hero photo is hosted on imgbb, with `Nshuti8.jpg` as a local fallback if it fails to load.
+- The hero photo is served locally as an optimized square image to avoid a third-party dependency
+  on the initial page load.
 - `apex-website.png` is a real screenshot of the APEX project; other project covers use CSS
   artwork and can be swapped for screenshots by replacing the `.project-cover` block.
 
