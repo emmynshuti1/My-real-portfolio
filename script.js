@@ -165,11 +165,9 @@
   const typingEl = $("#typingText");
   if (typingEl) {
     const words = [
-      "Web Developer",
-      "C++ Programmer",
-      "Cybersecurity Enthusiast",
-      "Full-Stack Developer",
-      "Ethical Hacker"
+      "Web Development",
+      "Desktop Software",
+      "Cybersecurity Fundamentals"
     ];
 
     if (prefersReducedMotion) {
