@@ -1,8 +1,8 @@
-# Nshuti Emmanuel — Portfolio
+# NSHUTI | Official Portfolio of Nshuti Emmanuel
 
 Personal portfolio of **Nshuti Emmanuel**, an IT student and web developer based in Rubavu, Rwanda.
 
-**Live site:** https://emmynshuti1.github.io/My-real-portfolio/
+**Live site:** [NSHUTI — Official Portfolio](https://emmynshuti1.github.io/My-real-portfolio/)
 
 ## What's here
 
