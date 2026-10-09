@@ -563,6 +563,7 @@ h1, h2, h3, h4 {
   border: 3px solid var(--border-strong);
   box-shadow: var(--shadow-lg);
   background: var(--surface-2);
+  image-rendering: crisp-edges;
 }
 .avatar-ring {
   position: absolute;

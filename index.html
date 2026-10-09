@@ -47,9 +47,14 @@
   <link rel="icon" href="https://emmynshuti1.github.io/My-real-portfolio/favicon-180.png" type="image/png" sizes="180x180">
   <link rel="apple-touch-icon" href="https://emmynshuti1.github.io/My-real-portfolio/favicon-180.png">
 
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  <style>
+    @font-face { font-display: swap; }
+    .fa { font-display: swap; }
+  </style>
   <link rel="stylesheet" href="style.css">
 
   <!-- Marks the document as script-enabled before first paint, so
@@ -208,11 +213,14 @@
             <span class="avatar-ring" aria-hidden="true"></span>
             <span class="avatar-ring avatar-ring--2" aria-hidden="true"></span>
             <div class="avatar-glow" aria-hidden="true"></div>
-            <img
-              class="avatar"
-              src="hero-portrait.jpg"
-              alt="Nshuti Emmanuel, IT student and web developer based in Rubavu, Rwanda"
-              width="400" height="400" fetchpriority="high" decoding="async">
+            <picture>
+              <source srcset="hero-portrait.jpg 640w" sizes="(min-width: 1200px) 360px, 78vw" type="image/jpeg">
+              <img
+                class="avatar"
+                src="hero-portrait.jpg"
+                alt="Nshuti Emmanuel, IT student and web developer based in Rubavu, Rwanda"
+                width="640" height="640" fetchpriority="high" decoding="async">
+            </picture>
           </div>
           <div class="avatar-card card-glass">
             <i class="fas fa-code" aria-hidden="true"></i>
