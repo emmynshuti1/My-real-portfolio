@@ -1,0 +1,23 @@
+{
+  "id": "./",
+  "name": "NSHUTI | Nshuti Emmanuel Portfolio",
+  "short_name": "NSHUTI",
+  "description": "Portfolio of Nshuti Emmanuel, an IT student and software developer in Rubavu, Rwanda.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#060911",
+  "theme_color": "#060911",
+  "icons": [
+    {
+      "src": "./favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

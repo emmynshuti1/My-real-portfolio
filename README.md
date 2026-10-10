@@ -13,7 +13,8 @@ A single-page, dependency-free static site — just HTML, CSS and JavaScript, de
 | `index.html` | Page markup, meta/OG tags and JSON-LD structured data |
 | `style.css` | Design tokens, layout and components |
 | `script.js` | Theme switching, navigation, scroll effects, project filtering, contact form |
-| `favicon.svg` | Site icon |
+| `manifest.webmanifest`, `service-worker.js` | Installable PWA metadata and offline app shell |
+| `favicon.svg`, `favicon-192.png`, `pwa-icon-512.png` | Site and install icons |
 | `sitemap.xml`, `robots.txt`, `BingSiteAuth.xml` | Search engine configuration |
 
 ## Features
@@ -24,6 +25,7 @@ A single-page, dependency-free static site — just HTML, CSS and JavaScript, de
 - **Scroll-spy navigation** with a reading-progress bar
 - **Filterable projects** sourced from real GitHub repositories
 - **Working contact form** with inline validation, loading and success states
+- **Installable PWA** with a cached offline portfolio shell
 
 ## Contact form
 
