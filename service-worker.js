@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = "nshuti-portfolio-v4";
+const CACHE_NAME = "nshuti-portfolio-v9";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -8,14 +8,7 @@ const APP_SHELL = [
   "./script.js",
   "./favicon.svg",
   "./favicon-192.png",
-  "./pwa-icon-512.png",
-  "./nshuti-emmanuel-rubavu-rwanda-portrait-320.jpg",
-  "./nshuti-emmanuel-rubavu-rwanda-portrait-640.jpg",
-  "./mbugangari-home-information-system.png",
-  "./smart-queue-health-system.png",
-  "./student-reminder-app.png",
-  "./apex-website.png",
-  "./modern-calculator.png"
+  "./pwa-icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
