@@ -321,6 +321,8 @@
   if (form) {
     const statusEl = $("#formStatus");
     const submitBtn = $("#submitBtn");
+    const contactEmail = "nshutiemmanuel860@gmail.com";
+    let openingEmail = false;
 
     const rules = {
       name: (v) => (v.trim().length >= 2 ? "" : "Please enter your name (at least 2 characters)."),
@@ -363,16 +365,9 @@
       input.addEventListener("blur", () => setError(name, rules[name](input.value)));
     });
 
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener("submit", (event) => {
       event.preventDefault();
-
-      // Honeypot: silently ignore bot submissions.
-      const honey = form.elements["_honey"];
-      if (honey && honey.value) {
-        setStatus("Message sent. Thanks for reaching out!", "success");
-        form.reset();
-        return;
-      }
+      if (openingEmail) return;
 
       const values = {};
       let firstInvalid = null;
@@ -380,8 +375,8 @@
       Object.keys(rules).forEach((name) => {
         const input = form.elements[name];
         if (!input) return;
-        values[name] = input.value;
-        const message = rules[name](input.value);
+        values[name] = input.value.trim();
+        const message = rules[name](values[name]);
         setError(name, message);
         if (message && !firstInvalid) firstInvalid = input;
       });
@@ -392,39 +387,34 @@
         return;
       }
 
+      const emailBody = [
+        "Name: " + values.name,
+        "Email: " + values.email,
+        "",
+        values.message
+      ].join("\n");
+      const mailtoUrl = "mailto:" + contactEmail
+        + "?subject=" + encodeURIComponent(values.subject)
+        + "&body=" + encodeURIComponent(emailBody);
+
+      openingEmail = true;
       setLoading(true);
-      setStatus("Sending…", "");
+      setStatus(
+        "Your email draft is prepared. If your email app opened, review it and press Send to send your message. If no email app opened, email " + contactEmail + " manually.",
+        ""
+      );
 
-      const payload = {
-        name: values.name.trim(),
-        email: values.email.trim(),
-        subject: values.subject.trim(),
-        message: values.message.trim(),
-        _subject: "New portfolio message — Nshuti Emmanuel",
-        _template: "table",
-        _captcha: "false"
-      };
+      const mailLink = document.createElement("a");
+      mailLink.href = mailtoUrl;
+      mailLink.hidden = true;
+      document.body.appendChild(mailLink);
+      mailLink.click();
+      mailLink.remove();
 
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) throw new Error("Request failed: " + response.status);
-
-        setStatus("Thanks " + payload.name.split(" ")[0] + " — your message is on its way. I'll reply within 24 hours.", "success");
-        form.reset();
-      } catch (error) {
-        // Network or service failure: fall back to a normal form post so the
-        // message is never lost, even if it means leaving the page.
-        setStatus("Opening the secure form…", "");
-        form.noValidate = true;
-        form.submit();
-      } finally {
+      window.setTimeout(() => {
+        openingEmail = false;
         setLoading(false);
-      }
+      }, 1500);
     });
   }
 

@@ -29,10 +29,9 @@ A single-page, dependency-free static site — just HTML, CSS and JavaScript, de
 
 ## Contact form
 
-Messages post to [Formsubmit](https://formsubmit.co) and land at `nshutiemmanuel860@gmail.com`.
-The first submission to a new address triggers a confirmation email from Formsubmit — **click
-the activation link once**, or messages won't be delivered. If the service is unreachable, the
-form falls back to a standard post so nothing is lost.
+The contact form validates the visitor's details and opens a prefilled email draft addressed to
+`nshutiemmanuel860@gmail.com`. Visitors must review the draft and press Send in their email app.
+If their device has no email handler configured, the form displays the address for manual email.
 
 ## Notes
 
