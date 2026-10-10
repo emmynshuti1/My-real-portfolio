@@ -404,12 +404,7 @@
         ""
       );
 
-      const mailLink = document.createElement("a");
-      mailLink.href = mailtoUrl;
-      mailLink.hidden = true;
-      document.body.appendChild(mailLink);
-      mailLink.click();
-      mailLink.remove();
+      window.location.href = mailtoUrl;
 
       window.setTimeout(() => {
         openingEmail = false;

@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = "nshuti-portfolio-v2";
+const CACHE_NAME = "nshuti-portfolio-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
