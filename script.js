@@ -323,6 +323,7 @@
     const submitBtn = $("#submitBtn");
     const contactEmail = "nshutiemmanuel860@gmail.com";
     let openingEmail = false;
+    let statusTimeout;
 
     const rules = {
       name: (v) => (v.trim().length >= 2 ? "" : "Please enter your name (at least 2 characters)."),
@@ -399,10 +400,12 @@
 
       openingEmail = true;
       setLoading(true);
-      setStatus(
-        "Your email draft is prepared. If your email app opened, review it and press Send to send your message. If no email app opened, email " + contactEmail + " manually.",
-        ""
-      );
+      const draftStatus = "Your email draft is prepared. If your email app opened, review it and press Send to send your message. If no email app opened, email " + contactEmail + " manually.";
+      setStatus(draftStatus, "");
+      window.clearTimeout(statusTimeout);
+      statusTimeout = window.setTimeout(() => {
+        if (statusEl && statusEl.textContent === draftStatus) setStatus("", "");
+      }, 12000);
 
       window.location.href = mailtoUrl;
 
