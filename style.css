@@ -552,6 +552,7 @@ h1, h2, h3, h4 {
   font-size: 1rem;
   transition: var(--t);
 }
+.hero-social a svg { display: block; width: 16px; height: 16px; fill: currentColor; }
 .hero-social a:hover {
   color: var(--accent-ink);
   background: var(--gradient);
